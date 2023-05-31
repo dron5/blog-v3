@@ -1,9 +1,29 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
+import path from 'path';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
+  const svgLoader = {
+    test: /\.svg$/i,
+    // use: ['@svgr/webpack', 'url-loader'],
+    // use: ['@svgr/webpack', 'svgo-loader'],
+    use: ['@svgr/webpack'],
+
+    // type: 'asset',
+    // type: 'asset/resource',
+    // use: 'svgo-loader',
+  };
+  const fileLoader = {
+    test: /\.(png|jpg|gif)$/i,
+    type: 'asset/resource',
+    // use: [
+    //   {
+    //     loader: 'file-loader',
+    //   },
+    // ],
+  };
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -30,5 +50,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader];
+  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
 }
