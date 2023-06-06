@@ -12,7 +12,6 @@ export function buildWebpackConfig(
   const { paths, mode, isDev } = options;
 
   return {
-    watch: true,
     mode: mode,
     entry: paths.entry,
     output: {

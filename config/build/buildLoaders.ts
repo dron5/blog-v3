@@ -5,13 +5,28 @@ import path from 'path';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            { locales: ['ru', 'en'], keyAsDefaultValue: true },
+          ],
+        ],
+      },
+    },
+  };
   const svgLoader = {
     test: /\.svg$/i,
     // use: ['@svgr/webpack', 'url-loader'],
     // use: ['@svgr/webpack', 'svgo-loader'],
     use: ['@svgr/webpack'],
 
-    // type: 'asset',
     // type: 'asset/resource',
     // use: 'svgo-loader',
   };
@@ -50,5 +65,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }

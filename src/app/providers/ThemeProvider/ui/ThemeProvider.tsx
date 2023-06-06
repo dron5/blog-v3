@@ -2,7 +2,7 @@ import { FC, useMemo, useState } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   ThemeContext,
-  Theme,
+  Theme
 } from '../lib/ThemeContext';
 
 const defaultTheme =
