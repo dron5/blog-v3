@@ -5,11 +5,11 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    // "eslint:recommended",
-    // "plugin:react/recommended"
+    'eslint:recommended',
+    'plugin:i18next/recommended',
+    // 'airbnb',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,6 +24,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'react',
+    'i18next',
   ],
   rules: {
 
@@ -53,5 +54,12 @@ module.exports = {
     'max-len': ['error', 100], // максимальная длина строки
     'no-multiple-empty-lines': 'error', // не больше 2 пустых строк подряд
     'react/react-in-jsx-scope': [0], // отключить импорт react-a
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'space-in-parens': ['error', 'never'], // пробелы между скобок и параметров
+    'react/jsx-curly-spacing': [2, { when: 'never' }],
+
+  },
+  globals: {
+    __IS_DEV__: true,
   },
 };
