@@ -6,4 +6,5 @@
 3.Typescript
 4.tests
 5.CI/CD
+6.eslint https://leonidlebedev.github.io/javascript-airbnb/react/#spacing
 
