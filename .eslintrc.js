@@ -7,10 +7,10 @@ module.exports = {
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'eslint:recommended',
-    // 'airbnb',
     'plugin:i18next/recommended',
+    'plugin:react/recommended', // либо нижние
+    // 'eslint:recommended', // /|\
+    // 'airbnb', // /|\
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -56,6 +56,7 @@ module.exports = {
     'space-in-parens': ['error', 'never'], // пробелы между скобок и параметров
     'react/jsx-curly-spacing': [2, { when: 'never', allowMultiline: true }],
     'max-len': ['error', 80, { ignoreComments: true }],
+    'no-unused-vars': [1],
   },
   globals: {
     __IS_DEV__: true,
