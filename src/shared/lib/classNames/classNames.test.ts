@@ -6,7 +6,8 @@ describe('classNames', ()=>{
   });
   test('with additional class', ()=>{
     const expectedClasses = 'someClass class1 class2';
-    expect(classNames('someClass',{}, ['class1', 'class2'])).toBe(expectedClasses);
+    expect(classNames('someClass',{}, ['class1', 'class2']))
+      .toBe(expectedClasses);
   });
   test('with additional class and all true', ()=>{
     const expectedClasses = 'someClass class1 class2 hovered scrollable';
