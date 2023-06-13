@@ -6,12 +6,14 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack",
+    "build:dev": "webpack --env mode=development",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "test": "npx jest --config ./config/jest/jest.config.ts"
+    "test": "npx jest --config ./config/jest/jest.config.ts",
+    "analyze:prod": "analyze=true webpack --env mode=production",
+    "analyze:dev": "analyze=true webpack --env mode=development"
   },
   "keywords": [],
   "author": "",
