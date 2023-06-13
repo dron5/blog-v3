@@ -24,6 +24,10 @@ export default {
     'node_modules',
   ],
 
+  modulePaths:[
+    '<rootDir>src',
+  ],
+
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
@@ -36,6 +40,7 @@ export default {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+  // setupFilesAfterEnv:['<rootDir>config/jest/setupTest.ts'],
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
