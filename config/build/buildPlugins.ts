@@ -1,10 +1,10 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import path from 'path';
 import webpack from 'webpack';
-import { type BuildOptions } from './types/config';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins ({
   paths,
@@ -23,5 +23,6 @@ export function buildPlugins ({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     isDev && new ReactRefreshWebpackPlugin(),
+    process.env.analyze && new BundleAnalyzerPlugin(),
   ].filter(Boolean);
 }
