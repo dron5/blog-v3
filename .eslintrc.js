@@ -52,7 +52,13 @@ module.exports = {
     // 'max-len': ['error', 100], // максимальная длина строки
     'no-multiple-empty-lines': 'error', // не больше 2 пустых строк подряд
     'react/react-in-jsx-scope': [0], // отключить импорт react-a
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute:['data-test'],
+      },
+    ],
     'space-in-parens': ['error', 'never'], // пробелы между скобок и параметров
     'react/jsx-curly-spacing': [2, { when: 'never', allowMultiline: true }],
     'max-len': ['error', 80, { ignoreComments: true }],
@@ -61,4 +67,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
