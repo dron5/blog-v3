@@ -5,6 +5,7 @@
 import path from 'path';
 
 export default {
+  // coverageDirectory: 'coverage',
   clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
@@ -21,11 +22,10 @@ export default {
   moduleDirectories: [
     'node_modules',
   ],
-  modulePaths: [
+  modulePaths:[
     '<rootDir>src',
   ],
   testMatch: [
-    // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   rootDir: '../../',
@@ -34,51 +34,6 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
-  // coverageDirectory: 'coverage',
-
-  // // Automatically clear mock calls, instances and results before every test
-  // clearMocks: true,
-  // // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: true,
-
-  // // The test environment that will be used for testing
-  // testEnvironment: 'jsdom',
-
-  // // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   '/node_modules/',
-  // ],
-
-  // // An array of directory names to be searched recursively up from the requiring module's location
-  // moduleDirectories: [
-  //   'node_modules',
-  // ],
-
-  // modulePaths:[
-  //   '<rootDir>src',
-  // ],
-
-  // // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   'js',
-  //   'jsx',
-  //   'ts',
-  //   'tsx',
-  //   'json',
-  //   'node',
-  // ],
-
-  // // The root directory that Jest should scan for tests and modules within
-  // rootDir: '../../',
-
-  // setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
-
-  // // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  // ],
-
-
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
