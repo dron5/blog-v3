@@ -12,7 +12,7 @@ jobs:
         node-version: [18.x]
     
     steps:
-      - uses: action/checkout@2
+      - uses: action/checkout@v2
       - name: Staring Node.js ${{matrix.node-version}}
         uses: action/setup-node@v1
         with:
