@@ -12,7 +12,7 @@ jobs:
         node-version: [18.x]
     
     steps:
-      - uses: action/checkout@main
+      - uses: action/checkout@v3
       - name: Staring Node.js ${{matrix.node-version}}
         uses: action/setup-node@v3
         with:
@@ -21,9 +21,9 @@ jobs:
         run: npm install
       - name: build production project
         run: npm run build:prod
-      # - name: linting typescript
-      #   run: npm run lint:ts
-      # - name: linting css
-      #   run: npm run lint:css
+      - name: linting typescript
+        run: npm run lint:ts
+      - name: linting css
+        run: npm run lint:css
       - name: unit testing
         run: npm run test:unit
