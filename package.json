@@ -13,9 +13,9 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "analyze:prod": "analyze=true webpack --env mode=production",
     "analyze:dev": "analyze=true webpack --env mode=development",
-    "test:jest": "npx jest --config ./config/jest/jest.config.ts",
-    "test:loki": "npx loki test",
-    "test:loki:ok": "npx loki approve",
+    "test:unit": "npx jest --config ./config/jest/jest.config.ts",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c './config/storybook'",
     "storybook:build": "build-storybook -c './config/storybook'"
   },
