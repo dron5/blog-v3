@@ -11,11 +11,13 @@
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "test": "npx jest --config ./config/jest/jest.config.ts",
     "analyze:prod": "analyze=true webpack --env mode=production",
     "analyze:dev": "analyze=true webpack --env mode=development",
+    "test:jest": "npx jest --config ./config/jest/jest.config.ts",
+    "test:loki": "npx loki test",
+    "test:loki:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c './config/storybook'",
-    "build-storybook": "storybook build"
+    "storybook:build": "build-storybook -c './config/storybook'"
   },
   "keywords": [],
   "author": "",
@@ -67,6 +69,7 @@
     "jest": "^27.5.1",
     "loki": "^0.28.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "react-error-boundary": "^4.0.10",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
@@ -90,5 +93,20 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.2.1"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
