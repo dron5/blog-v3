@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - uses: action/checkout@v3
-      - name: Staring Node.js ${{matrix.node-version}}
+      - name: Use Node.js ${{matrix.node-version}}
         uses: action/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
