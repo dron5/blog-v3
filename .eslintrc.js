@@ -66,7 +66,7 @@ module.exports = {
     // отключить импорт react-a
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-test', 'to'],
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     'space-in-parens': ['error', 'never'],
     // пробелы между скобок и параметров
@@ -74,7 +74,7 @@ module.exports = {
       when: 'never',
       allowMultiline: true,
     }],
-    'max-len': ['error', 80, {
+    'max-len': ['error', 100, {
       ignoreComments: true,
     }],
     'no-unused-vars': [1],
