@@ -77,6 +77,8 @@ module.exports = {
     'max-len': ['error', 100, {
       ignoreComments: true,
     }],
+    'jsx-ally/no-static-element-interactions': 'off',
+    'jsx-ally/click-events-have-key-events': 'off',
     'no-unused-vars': [1],
   },
   globals: {
